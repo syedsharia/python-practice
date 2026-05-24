@@ -8,11 +8,12 @@ def main():
         print("3. List all contacts")
         print("4. Delete contact")
         print("5. Exit")
+
         
         choice = input("Choose option: ")
         
         if choice == "1":
-            name = input("Enter name: ")
+            name = input("Enter name: ").strip().title()
             phone = input("Enter phone number: ")
             email = input("Enter email: ")
             contact_book[name] = {"phone": phone, "email": email}
@@ -34,7 +35,7 @@ def main():
                     print(f"Name: {name}, Phone: {details['phone']}, Email: {details['email']}")
         
         elif choice == "4":
-            name = input("Enter name to delete: ")
+            name = input("Enter name to delete: ").strip().title()
             if name in contact_book:
                 del contact_book[name]
                 print(f"Contact '{name}' deleted.")
@@ -50,3 +51,4 @@ def main():
 
 if __name__ == "__main__":
     main()  
+
